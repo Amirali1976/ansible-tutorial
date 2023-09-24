@@ -4,7 +4,7 @@
   become: true
   tasks:
 
-  - name: install apache and php for ubuntu servers 
+  - name: install apache2 package
     apt:
       name: 
         - apache2
@@ -12,12 +12,12 @@
       state: latest
       update_cache: yes
     when: ansible_distribution == "Ubuntu"
-   
-  - name: install apache and php for CentOS Servers
+
+  - name: install apache2 package
     dnf:
-      name:
+      name: 
         - httpd
         - php
       state: latest
       update_cache: yes
-    when: ansible_distribution == "CentOS" 
+    when: ansible_distribution == "CentOS"
